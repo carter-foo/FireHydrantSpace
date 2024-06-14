@@ -58,3 +58,6 @@ ProjectSettings/ProjectVersion.txt
 Temp/
 Build/
 UserSettings/EditorUserSettings.asset
+ProjectSettings/SceneTemplateSettings.json
+Packages/packages-lock.json
+Packages/manifest.json
