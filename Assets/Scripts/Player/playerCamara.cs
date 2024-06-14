@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerCamara : MonoBehaviour
+public class PlayerCamara : MonoBehaviour
 {
     public float sensX;
     public float sensY;

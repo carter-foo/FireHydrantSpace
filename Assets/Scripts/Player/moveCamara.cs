@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveCamara : MonoBehaviour
+public class MoveCamara : MonoBehaviour
 {
     public Transform cameraPosition;
     // Start is called before the first frame update
