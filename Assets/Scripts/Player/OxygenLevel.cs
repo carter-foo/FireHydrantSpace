@@ -43,7 +43,17 @@ public class OxygenLevel : MonoBehaviour
     {
         if (playerHealth != null)
         {
-            playerHealth.TakeDamage(playerHealth.maxHealth); // Player is dead :D
+            playerHealth.Die(); // Player is dead :D
+        }
+    }
+
+    public void DepleteOxygen(float amount)
+    {
+        currentOxygen -= amount;
+        if (currentOxygen < 0)
+        {
+            currentOxygen = 0;
+            OutOfOxygen();
         }
     }
 }
