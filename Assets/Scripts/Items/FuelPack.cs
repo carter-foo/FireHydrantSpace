@@ -24,9 +24,9 @@ public class FuelPack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Floating effect
-        float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed) * floatHeight;
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        // // Floating effect
+        // float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed) * floatHeight;
+        // transform.position = new Vector3(transform.position.x, newY, transform.position.z);
 
         // Rotating effect
         transform.Rotate(Vector3.right * rotateSpeed * Time.deltaTime);
