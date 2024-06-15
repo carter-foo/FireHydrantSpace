@@ -274,6 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135f58bc24f651247bfbebceee009a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpSound: {fileID: 8300000, guid: 925cbdd226b8d0c4baee2864d261a677, type: 3}
+  volume: 0.2
   refillAmount: 25
 --- !u!212 &928722313
 SpriteRenderer:
@@ -559,7 +561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667557924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.513, y: 3.808, z: -2.235}
+  m_LocalPosition: {x: -1.513, y: 3.808, z: -1.846}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -578,6 +580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b047530852015a49b26548ac0cf371e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpSound: {fileID: 0}
+  volume: 0.2
   refillAmount: 25
 --- !u!65 &1667557927
 BoxCollider:
@@ -594,7 +598,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

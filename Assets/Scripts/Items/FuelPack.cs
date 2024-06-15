@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FuelPack : MonoBehaviour
 {
+    public AudioClip pickUpSound;
+    public float volume;
+
     public float refillAmount = 25f;
 
     // Start is called before the first frame update
@@ -23,6 +26,7 @@ public class FuelPack : MonoBehaviour
         PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
         if (playerMovement != null)
         {
+            AudioSource.PlayClipAtPoint(pickUpSound, transform.position, volume);
             playerMovement.Refuel(refillAmount);
             Destroy(gameObject);
         }
