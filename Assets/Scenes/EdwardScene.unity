@@ -337,6 +337,8 @@ GameObject:
   - component: {fileID: 1121780322}
   - component: {fileID: 1121780324}
   - component: {fileID: 1121780325}
+  - component: {fileID: 1121780327}
+  - component: {fileID: 1121780326}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -425,6 +427,36 @@ MonoBehaviour:
   thrust: 1
   decelerationRate: 0.05
   cameraTransform: {fileID: 1753241978}
+  maxFuel: 100
+  currentFuel: 0
+--- !u!114 &1121780326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121780321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44e28fb279ac6744a8f29b3349ac24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxOxygen: 100
+  oxygenDepletionRate: 1
+--- !u!114 &1121780327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121780321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef59820ce67a25040bfd0b238d218a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &1187284610
 GameObject:
   m_ObjectHideFlags: 0
