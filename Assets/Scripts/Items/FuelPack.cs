@@ -17,4 +17,14 @@ public class FuelPack : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
+        if (playerMovement != null)
+        {
+            playerMovement.Refuel(refillAmount);
+            Destroy(gameObject);
+        }
+    }
 }
