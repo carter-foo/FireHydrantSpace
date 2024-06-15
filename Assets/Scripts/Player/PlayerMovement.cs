@@ -9,17 +9,22 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     public Transform cameraTransform;
 
+    public float maxFuel = 100f;
+    public float currentFuel;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
+        currentFuel = maxFuel;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && currentFuel > 0)
         {
             ApplyThrust();
         } 
@@ -33,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 forceDirection = -cameraTransform.forward; // Thrust Backwards
         rb.AddForce(forceDirection * thrust, ForceMode.Acceleration);
+
+        // Fuel Economy
+        currentFuel -= thrust * Time.deltaTime;
+        if (currentFuel < 0) currentFuel = 0; 
     }
 
     void Decelerate() 
