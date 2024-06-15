@@ -1976,6 +1976,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868224284}
   m_CullTransparentMesh: 1
+--- !u!1 &2101064910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101064912}
+  - component: {fileID: 2101064911}
+  m_Layer: 0
+  m_Name: Static
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2101064911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101064910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bb60e7598f0be498f54f2f3213f2b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceJunkPrefabs:
+  - {fileID: 958790995264015441, guid: 2e076b620f212ec4d939bc67c02675c6, type: 3}
+  - {fileID: 2658111899527793059, guid: 57191e4597376e449ae9518fb065d84e, type: 3}
+  stationarySpawnRadius: 500
+  stationaryJunksToSpawn: 1000
+  targetingSpawnRadius: 50
+  targetingSpaceJunkSpawnIntervalSeconds: 2
+  updateRadius: 200
+  maxSpawnAttempts: 5000
+--- !u!4 &2101064912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101064910}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.2029915, y: 5.7701616, z: -0.028129462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2124833310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8074412364799321647, guid: 0fc151f837ed26b469040508f0e622fe, type: 3}
@@ -1995,7 +2048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3656263632102470318, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8139043
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 3656263632102470318, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2003,7 +2056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3656263632102470318, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.110682
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 3656263632102470318, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2038,9 +2091,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7006617438131602544, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
+      propertyPath: thrust
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7006617438131602544, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1753241978}
+    - target: {fileID: 7006617438131602544, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
+      propertyPath: decelerationRate
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7006617438131602544, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: extinguisherNozzle
       value: 
@@ -2166,3 +2227,4 @@ SceneRoots:
   - {fileID: 1641689306}
   - {fileID: 1030643200}
   - {fileID: 1377993608}
+  - {fileID: 2101064912}
