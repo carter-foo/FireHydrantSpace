@@ -20,6 +20,10 @@ public class SpaceJunk : MonoBehaviour
 
         // Start moving in the move direction
         mRigidBody.AddForce(moveDir*speed, ForceMode.VelocityChange);
+
+        // Add a small random torque
+        Vector3 torque = Random.onUnitSphere*Random.Range(0, 10);
+        mRigidBody.AddTorque(torque, ForceMode.VelocityChange);
     }
 
     // Update is called once per frame
