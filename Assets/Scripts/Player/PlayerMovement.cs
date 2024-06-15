@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float maxFuel = 100f;
     public float currentFuel;
+    public float lostRateFuel = 2f;
 
 
     // Start is called before the first frame update
@@ -92,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(forceDirection * thrust, ForceMode.Acceleration);
 
         // Fuel Economy
-        currentFuel -= thrust * Time.deltaTime;
+        currentFuel -= thrust * lostRateFuel * Time.deltaTime;
         if (currentFuel < 0) currentFuel = 0; 
     }
 
@@ -110,6 +111,11 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 GetCurrentVelocity() 
     {
         return rb.velocity;
+    }
+
+    public float GetCurrentFuel()
+    {
+        return currentFuel;
     }
 
     // Made so spraying isn't so annoying
