@@ -5,7 +5,7 @@ using UnityEngine;
 public class OxygenLevel : MonoBehaviour
 {
     public float maxOxygen = 100f;
-    public float oxygenDepletionRate = 1f;
+    public float oxygenDepletionRate = 0.2f;
     public float currentOxygen;
     private PlayerHealth playerHealth;
 
