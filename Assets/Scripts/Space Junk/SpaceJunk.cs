@@ -12,14 +12,15 @@ public class SpaceJunk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // // Initialize to some random position
-        // this.transform.position = new Vector3(10, 0, 5);
-        
         // Get the rigid body component
         mRigidBody = GetComponent<Rigidbody>();
 
         // Start moving in the move direction
         mRigidBody.AddForce(moveDir*speed, ForceMode.VelocityChange);
+
+        // Add a small random torque
+        Vector3 torque = Random.onUnitSphere*Random.Range(0, 10);
+        mRigidBody.AddTorque(torque, ForceMode.VelocityChange);
     }
 
     // Update is called once per frame

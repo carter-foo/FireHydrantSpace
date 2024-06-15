@@ -274,6 +274,8 @@ MonoBehaviour:
   spaceJunkPrefabs:
   - {fileID: 958790995264015441, guid: 2e076b620f212ec4d939bc67c02675c6, type: 3}
   - {fileID: 2658111899527793059, guid: 57191e4597376e449ae9518fb065d84e, type: 3}
+  leadFactor: 45
+  stationarySpawnRadius: 2500
 --- !u!1001 &1885106856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -324,6 +326,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5609372587459615781, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609372587459615781, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7006617438131602544, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
