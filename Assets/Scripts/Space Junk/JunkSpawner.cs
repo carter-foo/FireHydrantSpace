@@ -85,7 +85,7 @@ public class JunkSpawner : MonoBehaviour
 
         // Spawn the space junk with a random direction
         GameObject instantiatedObject = Instantiate(prefab, spawnPos, Quaternion.identity);
-        SpaceJunk junk = instantiatedObject.GetComponent<SpaceJunk>();
+        SpaceJunk junk = instantiatedObject.AddComponent<SpaceJunk>();
         junk.speed = Random.Range(0, 3f);
         junk.moveDir = moveDir;
 
