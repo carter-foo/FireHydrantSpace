@@ -48,4 +48,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, (1 - decelerationRate) * Time.deltaTime);
     }
+
+    public void Refuel(float amount)
+    {
+        currentFuel += amount;
+        if (currentFuel > maxFuel) currentFuel = maxFuel;
+    }
 }
