@@ -30,6 +30,15 @@ public class OxygenLevel : MonoBehaviour
         }
     }
 
+    public void RefillOxygen(float amount)
+    {
+        if (playerHealth != null)
+        {
+            currentOxygen += amount;
+            if (currentOxygen > maxOxygen) currentOxygen = maxOxygen;
+        }
+    }
+
     void OutOfOxygen()
     {
         if (playerHealth != null)

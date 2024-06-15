@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    //public AudioClip hurtSound1;
+    //public AudioClip hurtSound2;
+    //public AudioClip hurtSound3;
+    //public AudioClip hurtSound4;
+    //public AudioClip hurtSound5;
+
+    public AudioClip[] hurtSounds;
+
+    public float volume = 0.5f;
+
     public float maxHealth = 100f;
     public float currentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
+
         currentHealth = maxHealth;
+
+        
+        
+
+
     }
 
     // Update is called once per frame
@@ -21,6 +37,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+
+        HurtSoundRandomizer();
+
         currentHealth -= damage;
         if (currentHealth < 0) currentHealth = 0;
 
@@ -30,6 +49,12 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
+
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+    } 
 
     void Die()
     {
@@ -43,4 +68,15 @@ public class PlayerHealth : MonoBehaviour
         TakeDamage(25f);
 
     }
+
+    void HurtSoundRandomizer()
+    {
+        int randomIndex = Random.Range(0, hurtSounds.Length);
+        AudioClip selectedSound = hurtSounds[randomIndex];
+
+        AudioSource.PlayClipAtPoint(selectedSound, transform.position, volume);
+
+    }
+
+   
 }
