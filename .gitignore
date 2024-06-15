@@ -54,7 +54,7 @@ Sirenix/Assemblies/Editor/GeneratedOdinEditors.mdb.meta
 #Data
 Assets/_Project/Data/
 
-UserSettings/*
+UserSettings/
 ProjectSettings/ProjectVersion.txt
 Temp/
 Build/
@@ -62,3 +62,4 @@ UserSettings/EditorUserSettings.asset
 ProjectSettings/SceneTemplateSettings.json
 Packages/packages-lock.json
 Packages/manifest.json
+UpgradeLog.htm
