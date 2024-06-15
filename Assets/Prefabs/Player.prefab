@@ -138,9 +138,11 @@ MonoBehaviour:
   spraySoundClips:
   - {fileID: 8300000, guid: c8197cbf16d0f9447b390df4741e75ce, type: 3}
   - {fileID: 8300000, guid: b8a79dd0a3253e845a9af69872cd851b, type: 3}
+  fartSound: {fileID: 8300000, guid: 0f93a3fa47fda844e88c0ee926cb54ac, type: 3}
   audioSource: {fileID: 0}
   maxFuel: 100
   currentFuel: 0
+  lostRateFuel: 10
 --- !u!114 &7007858140486654316
 MonoBehaviour:
   m_ObjectHideFlags: 0

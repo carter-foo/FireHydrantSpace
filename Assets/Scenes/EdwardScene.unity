@@ -2102,10 +2102,6 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7006617438131602544, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
-      propertyPath: lostRateFuel
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7006617438131602544, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1753241978}

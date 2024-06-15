@@ -11,11 +11,15 @@ public class PlayerMovement : MonoBehaviour
     public Transform extinguisherNozzle; // added so the foam particles can continously follow direction of camera when shot out
     public ParticleSystem foamParticleSystem;
     public AudioClip[] spraySoundClips;
+    public AudioClip fartSound;
+    
     public AudioSource audioSource;
 
     public float maxFuel = 100f;
     public float currentFuel;
     public float lostRateFuel = 2f;
+
+
 
 
     // Start is called before the first frame update
@@ -44,30 +48,41 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1) && currentFuel > 0)
+        if (Input.GetMouseButton(1))
         {
-            ApplyThrust();
-
-            // Foam Particles
-            if (foamParticleSystem != null)
+            if (currentFuel > 0)
             {
-                foamParticleSystem.transform.position = extinguisherNozzle.position;
-                foamParticleSystem.transform.rotation = extinguisherNozzle.rotation;
+                ApplyThrust();
 
-                ParticleSystem.EmissionModule emission = foamParticleSystem.emission;
-                emission.enabled = true;
-                if (!foamParticleSystem.isPlaying)
+                // Foam Particles
+                if (foamParticleSystem != null)
                 {
-                    foamParticleSystem.Play();
+                    foamParticleSystem.transform.position = extinguisherNozzle.position;
+                    foamParticleSystem.transform.rotation = extinguisherNozzle.rotation;
+
+                    ParticleSystem.EmissionModule emission = foamParticleSystem.emission;
+                    emission.enabled = true;
+                    if (!foamParticleSystem.isPlaying)
+                    {
+                        foamParticleSystem.Play();
+                    }
+                }
+
+                // Audio
+                if (!audioSource.isPlaying)
+                {
+                    PlayRandomSpraySound();
                 }
             }
-
-            // Audio
-            if (!audioSource.isPlaying)
+            else
             {
-                PlayRandomSpraySound();
+                // Play fart sound when there's no fuel
+                if (!audioSource.isPlaying || audioSource.clip != fartSound)
+                {
+                    PlayFartSound();
+                }
             }
-        } 
+        }
         else
         {
             Decelerate();
@@ -79,8 +94,8 @@ public class PlayerMovement : MonoBehaviour
                 emission.enabled = false;
             }
 
-            // Auido
-            if (audioSource.isPlaying)
+            // Audio
+            if (audioSource.isPlaying && audioSource.clip != fartSound)
             {
                 audioSource.Stop();
             }
@@ -94,10 +109,10 @@ public class PlayerMovement : MonoBehaviour
 
         // Fuel Economy
         currentFuel -= thrust * lostRateFuel * Time.deltaTime;
-        if (currentFuel < 0) currentFuel = 0; 
+        if (currentFuel < 0) currentFuel = 0;
     }
 
-    void Decelerate() 
+    void Decelerate()
     {
         rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, (1 - decelerationRate) * Time.deltaTime);
     }
@@ -108,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
         if (currentFuel > maxFuel) currentFuel = maxFuel;
     }
 
-    public Vector3 GetCurrentVelocity() 
+    public Vector3 GetCurrentVelocity()
     {
         return rb.velocity;
     }
@@ -124,6 +139,13 @@ public class PlayerMovement : MonoBehaviour
         int randomIndex = Random.Range(0, spraySoundClips.Length);
         AudioClip selectedSound = spraySoundClips[randomIndex];
         audioSource.clip = selectedSound;
+        audioSource.Play();
+    }
+
+    void PlayFartSound()
+    {
+        audioSource.clip = fartSound;
+        audioSource.loop = false;
         audioSource.Play();
     }
 }
