@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FuelPack : MonoBehaviour
 {
+    public float refillAmount = 25f;
+
     // Start is called before the first frame update
     void Start()
     {
