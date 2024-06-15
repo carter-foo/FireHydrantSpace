@@ -914,14 +914,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667557924}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.513, y: 3.808, z: -1.846}
+  m_LocalRotation: {x: -0.7173151, y: -0, z: -0, w: 0.696749}
+  m_LocalPosition: {x: -1.513, y: 3.7706192, z: -1.8033172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -91.666, y: 0, z: 0}
 --- !u!114 &1667557926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,6 +937,9 @@ MonoBehaviour:
   pickUpSound: {fileID: 8300000, guid: 925cbdd226b8d0c4baee2864d261a677, type: 3}
   volume: 0.2
   refillAmount: 25
+  floatSpeed: 0.2
+  floatHeight: 0.1
+  rotateSpeed: 90
 --- !u!65 &1667557927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1399,6 +1402,10 @@ PrefabInstance:
       propertyPath: orientation
       value: 
       objectReference: {fileID: 246082484}
+    - target: {fileID: 3366649878686447175, guid: 0fc151f837ed26b469040508f0e622fe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3366649878686447175, guid: 0fc151f837ed26b469040508f0e622fe, type: 3}
       propertyPath: cameraTransform
       value: 
