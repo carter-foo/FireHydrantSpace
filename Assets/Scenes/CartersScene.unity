@@ -274,7 +274,8 @@ MonoBehaviour:
   spaceJunkPrefabs:
   - {fileID: 958790995264015441, guid: 2e076b620f212ec4d939bc67c02675c6, type: 3}
   - {fileID: 2658111899527793059, guid: 57191e4597376e449ae9518fb065d84e, type: 3}
-  leadFactor: 15
+  leadFactor: 45
+  stationarySpawnRadius: 2500
 --- !u!1001 &1885106856
 PrefabInstance:
   m_ObjectHideFlags: 0
