@@ -56,4 +56,9 @@ public class OxygenLevel : MonoBehaviour
             OutOfOxygen();
         }
     }
+
+    public float GetCurrentOxygen()
+    {
+        return currentOxygen;
+    }
 }
