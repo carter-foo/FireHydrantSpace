@@ -12,9 +12,6 @@ public class SpaceJunk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // // Initialize to some random position
-        // this.transform.position = new Vector3(10, 0, 5);
-        
         // Get the rigid body component
         mRigidBody = GetComponent<Rigidbody>();
 

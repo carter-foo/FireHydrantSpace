@@ -5,13 +5,9 @@ using UnityEngine;
 public class JunkSpawner : MonoBehaviour
 {
     public GameObject[] spaceJunkPrefabs;
-    public float leadFactor = 50f;
     public float stationarySpawnRadius = 500f;
-
-    private float spawnInterval = 5f;
-    private float spawnRadius = 150f;
-
-    private Vector3 lastSpawnLocation;
+    public float targetingSpawnRadius = 150f;
+    public float targetingSpaceJunkSpawnIntervalSeconds = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +19,13 @@ public class JunkSpawner : MonoBehaviour
 
         // Now spawn more space junk that targets the player occasionally
         StartCoroutine(SpawnRoutine());
-
-        // Initialize the last spawn position to 
     }
 
     IEnumerator SpawnRoutine() {
         Debug.Log("Coroutine started");
         while (true) {
             // Wait for the spawn interval
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(targetingSpaceJunkSpawnIntervalSeconds);
             SpawnTargetingSpaceJunk(); 
         }
     }
@@ -64,10 +58,10 @@ public class JunkSpawner : MonoBehaviour
         // Choose a random junk prefab
         GameObject prefab = spaceJunkPrefabs[Random.Range(0, spaceJunkPrefabs.Length)];
 
-        // Choose a spawn position spawnRadius units away from the player in a random direction
+        // Choose a spawn position targetingSpawnRadius units away from the player in a random direction
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Vector3 playerPos = player.transform.position;
-        Vector3 spawnPos = playerPos + Random.onUnitSphere * spawnRadius;
+        Vector3 spawnPos = playerPos + Random.onUnitSphere * targetingSpawnRadius;
         
         // Make the junk move at a random speed
         float junkSpeed = Random.Range(10f, 30f);
