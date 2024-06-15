@@ -31,6 +31,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+    } 
+
     void Die()
     {
         // GAME OVER
