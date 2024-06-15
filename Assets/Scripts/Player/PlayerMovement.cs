@@ -54,4 +54,9 @@ public class PlayerMovement : MonoBehaviour
         currentFuel += amount;
         if (currentFuel > maxFuel) currentFuel = maxFuel;
     }
+
+    public Vector3 GetCurrentVelocity() 
+    {
+        return rb.velocity;
+    }
 }

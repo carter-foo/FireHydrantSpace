@@ -5,6 +5,7 @@ using UnityEngine;
 public class JunkSpawner : MonoBehaviour
 {
     public GameObject[] spaceJunkPrefabs;
+    public float leadFactor = 50f;
 
     private float spawnInterval = 5f;
     private float stationarySpawnRadius = 500f;
@@ -13,10 +14,10 @@ public class JunkSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Start off by spawning a bunch of stationary or slow moving space junk
-        for (int i = 0; i < 3000; i++) {
-            SpawnStationarySpaceJunk();
-        }
+        // // Start off by spawning a bunch of stationary or slow moving space junk
+        // for (int i = 0; i < 3000; i++) {
+        //     SpawnStationarySpaceJunk();
+        // }
 
         // Now spawn more space junk that targets the player occasionally
         StartCoroutine(SpawnRoutine());
@@ -61,17 +62,22 @@ public class JunkSpawner : MonoBehaviour
 
         // Choose a spawn position within a radius of the player beyond a certain distance
         // TODO: add minimum distance from player
-        Vector3 playerPos = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
-        Vector3 spawnPos = playerPos + Random.insideUnitSphere * spawnRadius;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 playerPos = player.transform.position;
+        Vector3 spawnPos = playerPos + Random.onUnitSphere * spawnRadius;
         
-        // Locate the player and calculate a movement direction towards them
-        Vector3 destPoint = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
-        Vector3 moveDir = (destPoint - spawnPos).normalized;
+        float junkSpeed = Random.Range(0, 30f);
+
+        // Try to intercept the player based on their position and movement speed
+        PlayerMovement movementScript = player.GetComponent<PlayerMovement>();
+        Debug.Log("Player speed: " + movementScript.GetCurrentVelocity());
+        Vector3 interceptionPoint = player.transform.position + movementScript.GetCurrentVelocity() * leadFactor/junkSpeed;
+        Vector3 moveDir = (interceptionPoint - spawnPos).normalized;
 
         // Spawn the space junk, then set its heading and speed
         GameObject instantiatedObject = Instantiate(prefab, spawnPos, Quaternion.identity);
         SpaceJunk junk = instantiatedObject.GetComponent<SpaceJunk>();
-        junk.speed = Random.Range(0, 30f);
+        junk.speed = junkSpeed;
         junk.moveDir = moveDir;
 
         return instantiatedObject;
