@@ -423,6 +423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 1
+  decelerationRate: 0.05
+  cameraTransform: {fileID: 1753241978}
 --- !u!1 &1187284610
 GameObject:
   m_ObjectHideFlags: 0

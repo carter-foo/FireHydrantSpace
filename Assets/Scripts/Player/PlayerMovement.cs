@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float thrust = 10.0f;
+    public float thrust = 1f;
     public float decelerationRate = 0.95f;
     private Rigidbody rb;
     public Transform cameraTransform;
@@ -37,6 +37,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Decelerate() 
     {
-        rb.velocity *= decelerationRate;
+        rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, (1 - decelerationRate) * Time.deltaTime);
     }
 }
