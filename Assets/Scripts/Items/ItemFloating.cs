@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemFloating : MonoBehaviour
 {
+    public Vector3 axis = Vector3.right;
     public float floatSpeed = 0.2f;
     public float floatHeight = 0.1f;
     private Vector3 startPos;
@@ -24,6 +25,6 @@ public class ItemFloating : MonoBehaviour
         // transform.position = new Vector3(transform.position.x, newY, transform.position.z);
 
         // Rotating effect
-        transform.Rotate(Vector3.right * rotateSpeed * Time.deltaTime);
+        transform.Rotate(axis * rotateSpeed * Time.deltaTime);
     }
 }

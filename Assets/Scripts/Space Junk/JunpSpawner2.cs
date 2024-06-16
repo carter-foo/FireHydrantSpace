@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JunpSpawner2 : MonoBehaviour
@@ -28,7 +27,15 @@ public class JunpSpawner2 : MonoBehaviour
     [Header("References")]
     public Rigidbody player;
 
+    public static int ConvertToUnixTimestamp(System.DateTime date)
+    {
+        System.DateTime origin = new System.DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+        System.TimeSpan diff = date.ToUniversalTime() - origin;
+        return (int) System.Math.Floor(diff.TotalSeconds);
+    }
+
     void Start() {
+        if(randomSeed == 0) randomSeed = ConvertToUnixTimestamp(System.DateTime.Now);
         Random.InitState(randomSeed);
 
         foreach (var obstacle in obstacleTypes)

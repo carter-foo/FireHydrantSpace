@@ -18,6 +18,7 @@ public class HeldItemSway : MonoBehaviour
     public Rigidbody playerRigidbody;
 
     void Update() {
+        if(Time.timeScale == 0) return;
 
         Vector3 localPos = transform.localPosition;
         Vector3 velocity = Camera.main.transform.InverseTransformDirection(playerRigidbody.velocity);
