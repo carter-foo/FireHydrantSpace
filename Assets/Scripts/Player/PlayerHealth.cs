@@ -102,7 +102,12 @@ public class PlayerHealth : MonoBehaviour
         // GAME OVER
         isDead = true;
         Debug.Log("Player has become one with space trash");
-        GameObject.FindObjectOfType<HUDMarkers>().enabled = false;
+       
+        var test = GameObject.FindObjectOfType<HUDMarkers>();
+        if (test)
+        {
+            test.enabled = false;
+        }
         gameOverManager.ShowGameOver();
         
     }
