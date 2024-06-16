@@ -23,11 +23,16 @@ public class GameOverManager : MonoBehaviour
     public void ShowGameOver()
     {
         gameOverUI.SetActive(true);
-        Time.timeScale = 1.0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
     }
 
     public void RestartGame()
     {
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
