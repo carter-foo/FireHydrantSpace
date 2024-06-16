@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
 
     private OxygenLevel oxygenLevel;
+    private GameOverManager gameOverManager;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         oxygenLevel = GetComponent<OxygenLevel>();
         
-        
+        gameOverManager = FindObjectOfType<GameOverManager>();
 
 
     }
@@ -64,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
         HurtSoundRandomizer();
         // GAME OVER
         Debug.Log("Player has become one with space trash");
+        gameOverManager.ShowGameOver();
         
     }
 

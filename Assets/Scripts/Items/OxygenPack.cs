@@ -8,7 +8,7 @@ public class OxygenPack : MonoBehaviour
     public AudioClip pickUpSound;
     public float volume;
 
-    public float refillAmount = 25f;
+    public float refillAmount = 100f;
 
     // Start is called before the first frame update
     void Start()

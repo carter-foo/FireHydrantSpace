@@ -7,7 +7,7 @@ public class FuelPack : MonoBehaviour
     public AudioClip pickUpSound;
     public float volume;
 
-    public float refillAmount = 25f;
+    public float refillAmount = 100f;
 
     //public float floatSpeed = 0.5f;
     //public float floatHeight = 0.5f;
