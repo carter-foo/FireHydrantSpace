@@ -33,7 +33,8 @@ public class WinManager : MonoBehaviour
         AudioSource.PlayClipAtPoint(yesClip, playerTransform.position, volume);
 
         Debug.Log("Game Win");
-        Cursor.lockState = CursorLockMode.None; 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         Time.timeScale = 0f; 
 
