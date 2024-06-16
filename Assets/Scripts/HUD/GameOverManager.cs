@@ -8,10 +8,15 @@ public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverUI;
 
+    public AudioClip deepSound;
+
+    private Transform playerTransform;
     // Start is called before the first frame update
     void Start()
     {
         gameOverUI.SetActive(false);
+
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -22,6 +27,8 @@ public class GameOverManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        AudioSource.PlayClipAtPoint(deepSound, playerTransform.position);
+
         gameOverUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

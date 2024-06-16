@@ -2100,6 +2100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 5581759695665183903}
+  deepSound: {fileID: 8300000, guid: a46ccda9a0e47e64aaf26c8115f45dbb, type: 3}
 --- !u!1 &6883352727324699593
 GameObject:
   m_ObjectHideFlags: 0
