@@ -947,10 +947,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4418781405974130079, guid: ad2ae1ef54c80e245a4a91d676907dc9, type: 3}
-      propertyPath: deepSound
-      value: 
-      objectReference: {fileID: 8300000, guid: a46ccda9a0e47e64aaf26c8115f45dbb, type: 3}
     - target: {fileID: 5447771636920085624, guid: ad2ae1ef54c80e245a4a91d676907dc9, type: 3}
       propertyPath: oxygenLevel
       value: 
