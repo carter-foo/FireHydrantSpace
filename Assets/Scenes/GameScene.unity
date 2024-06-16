@@ -1233,6 +1233,7 @@ MonoBehaviour:
   obstacleCountModifier: 1
   projectilePrefabs:
   - {fileID: 7166940510702651496, guid: 1d8e8cd16884a9f408e351efccc36e81, type: 3}
+  - {fileID: 2689217618762069016, guid: e7ed84428479c3d4da3ebe58c3b0d4c8, type: 3}
   projectileInterval: 2
   projectileMinSpawnDistance: 50
   projectileMaxSpawnDistance: 100
@@ -1314,7 +1315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5609372587459615781, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7006617438131602544, guid: a3412dfb9e7dc4a409a96f87123a0263, type: 3}
       propertyPath: thrust
@@ -1495,7 +1496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2048280076705817883, guid: 0fc151f837ed26b469040508f0e622fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2789778269382652511, guid: 0fc151f837ed26b469040508f0e622fe, type: 3}
       propertyPath: orientation

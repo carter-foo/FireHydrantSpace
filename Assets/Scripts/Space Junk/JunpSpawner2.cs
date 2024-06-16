@@ -88,11 +88,11 @@ public class JunpSpawner2 : MonoBehaviour
 
     IEnumerator SpawnLoop() {
         yield return new WaitUntil(() => player.gameObject.activeInHierarchy);
-        
+
         while (true) {
             yield return new WaitForSeconds(projectileInterval);
 
-            int index = Random.Range(0, projectilePrefabs.Length - 1);
+            int index = Random.Range(0, projectilePrefabs.Length);
             var instance = Instantiate(projectilePrefabs[index]);
 
             var position = player.transform.position + Random.insideUnitSphere.normalized * Random.Range(projectileMinSpawnDistance, projectileMaxSpawnDistance);
@@ -101,7 +101,10 @@ public class JunpSpawner2 : MonoBehaviour
             var interceptPos = CalculateInterceptPoint(player.transform.position, player.velocity, position, speed);
             if (interceptPos != Vector3.zero) {
                 instance.transform.position = position;
-                instance.GetComponent<Rigidbody>().velocity = (interceptPos - position).normalized * speed;
+                var rbody = instance.GetComponent<Rigidbody>();
+                rbody.velocity = (interceptPos - position).normalized * speed;
+                rbody.angularVelocity = Random.insideUnitSphere;
+                instance.AddComponent<DeleteTimer>();
             } else {
                 // Handle case where intercept point is not valid
                 Destroy(instance);
