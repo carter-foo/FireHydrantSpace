@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     private OxygenLevel oxygenLevel;
     private GameOverManager gameOverManager;
+    private WinManager winManager;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         oxygenLevel = GetComponent<OxygenLevel>();
         
         gameOverManager = FindObjectOfType<GameOverManager>();
+        winManager = FindAnyObjectByType<WinManager>();
 
 
     }
@@ -72,7 +74,17 @@ public class PlayerHealth : MonoBehaviour
     // For when Player is hit
     void OnCollisionEnter(Collision collision)
     {
-        TakeDamage(10f);
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("Ship"))
+        {
+            Debug.Log("Should be Wining");
+            winManager.ShowWinScreen();
+        } else
+        {
+            Debug.Log("Offfff");
+            TakeDamage(10f);
+        }
+
 
     }
 

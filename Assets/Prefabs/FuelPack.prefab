@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238956549455702222}
-  m_LocalRotation: {x: -0.7173151, y: -0, z: -0, w: 0.696749}
+  m_LocalRotation: {x: -0.71731204, y: 0, z: 0, w: 0.69675213}
   m_LocalPosition: {x: -1.513, y: 3.7706192, z: -1.8033172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpSound: {fileID: 8300000, guid: 925cbdd226b8d0c4baee2864d261a677, type: 3}
   volume: 0.2
-  refillAmount: 25
+  refillAmount: 100
 --- !u!114 &9203707809676140733
 MonoBehaviour:
   m_ObjectHideFlags: 0
