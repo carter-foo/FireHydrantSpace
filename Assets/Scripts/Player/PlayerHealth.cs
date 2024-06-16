@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public UnityEngine.UI.RawImage suffocationImage;
 
     public float volume = 0.5f;
+    public float damageOnHit = 25.0f;
 
     public float maxHealth = 100f;
     public float currentHealth;
@@ -123,7 +124,7 @@ public class PlayerHealth : MonoBehaviour
         } else
         {
             Debug.Log("Offfff");
-            TakeDamage(10f);
+            TakeDamage(damageOnHit);
         }
 
 
