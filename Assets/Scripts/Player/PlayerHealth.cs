@@ -61,8 +61,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-            // GAME OVER
-            Debug.Log("Player has become one with space trash");
+        HurtSoundRandomizer();
+        // GAME OVER
+        Debug.Log("Player has become one with space trash");
         
     }
 

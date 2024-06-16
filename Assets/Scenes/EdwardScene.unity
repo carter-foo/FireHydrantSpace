@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &60606956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6846981885996596717, guid: ad2ae1ef54c80e245a4a91d676907dc9, type: 3}
+  m_PrefabInstance: {fileID: 4198324212684837848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &60606957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 310220015548837988, guid: ad2ae1ef54c80e245a4a91d676907dc9, type: 3}
+  m_PrefabInstance: {fileID: 4198324212684837848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60606956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &60606960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60606956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe1f522cd203c94fb4660866b80b7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oxygenImage: {fileID: 60606957}
+  blinkSpeed: 1
 --- !u!1 &79613056
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +821,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6846981885996596717, guid: ad2ae1ef54c80e245a4a91d676907dc9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 60606960}
   m_SourcePrefab: {fileID: 100100000, guid: ad2ae1ef54c80e245a4a91d676907dc9, type: 3}
 --- !u!1001 &5986307725973649091
 PrefabInstance:
