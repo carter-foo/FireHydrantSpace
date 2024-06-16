@@ -11,15 +11,24 @@ public class PlayerHealth : MonoBehaviour
     //public AudioClip hurtSound5;
 
     public AudioClip[] hurtSounds;
+    public AudioClip[] playOnHurt;
+    public UnityEngine.UI.RawImage[] hurtImages;
+    public UnityEngine.UI.RawImage suffocationImage;
 
     public float volume = 0.5f;
 
     public float maxHealth = 100f;
     public float currentHealth;
+    public float hurtFade = 1.0f;
+    public float suffocationFade = 10.0f;
+
+    private float hurtOpacity = 0.0f;
+    private float suffocationOpacity = 0.0f;
 
     private OxygenLevel oxygenLevel;
     private GameOverManager gameOverManager;
     private WinManager winManager;
+    private bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,12 +46,37 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        hurtOpacity -= hurtFade * Time.deltaTime;
+        foreach (var hurtImage in hurtImages)
+        {
+            var col = hurtImage.color;
+            col.a = hurtOpacity;
+            hurtImage.color = col;
+        }
+
+        if(oxygenLevel.currentOxygen <= 0) {
+            suffocationOpacity += Time.deltaTime / suffocationFade;
+        }
+        else {
+            suffocationOpacity = 0.0f;
+        }
+
+        {
+            var col = suffocationImage.color;
+            col.a = suffocationOpacity;
+            suffocationImage.color = col;
+        }
+
+        if(suffocationOpacity >= 1.0f) {
+            suffocationOpacity = 1.0f;
+            if(!isDead)
+                Die();
+        }
     }
 
     public void TakeDamage(float damage)
     {
-
+        hurtOpacity = 1.0f;
         HurtSoundRandomizer();
 
         //currentHealth -= damage;
@@ -64,9 +98,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        HurtSoundRandomizer();
+        // HurtSoundRandomizer();
         // GAME OVER
+        isDead = true;
         Debug.Log("Player has become one with space trash");
+        GameObject.FindObjectOfType<HUDMarkers>().enabled = false;
         gameOverManager.ShowGameOver();
         
     }
@@ -94,7 +130,10 @@ public class PlayerHealth : MonoBehaviour
         AudioClip selectedSound = hurtSounds[randomIndex];
 
         AudioSource.PlayClipAtPoint(selectedSound, transform.position, volume);
-
+        foreach (var sound in playOnHurt)
+        {
+            AudioSource.PlayClipAtPoint(sound, transform.position, 1.0f);
+        }
     }
 
    

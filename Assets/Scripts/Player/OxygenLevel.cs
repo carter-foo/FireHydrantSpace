@@ -25,7 +25,7 @@ public class OxygenLevel : MonoBehaviour
             if (currentOxygen <= 0) 
             {
                 currentOxygen = 0;
-                OutOfOxygen();
+                // OutOfOxygen();
             }
         }
     }
@@ -39,13 +39,13 @@ public class OxygenLevel : MonoBehaviour
         }
     }
 
-    void OutOfOxygen()
-    {
-        if (playerHealth != null)
-        {
-            playerHealth.Die(); // Player is dead :D
-        }
-    }
+    // void OutOfOxygen()
+    // {
+    //     if (playerHealth != null)
+    //     {
+    //         playerHealth.Die(); // Player is dead :D
+    //     }
+    // }
 
     public void DepleteOxygen(float amount)
     {
@@ -53,7 +53,7 @@ public class OxygenLevel : MonoBehaviour
         if (currentOxygen < 0)
         {
             currentOxygen = 0;
-            OutOfOxygen();
+            // OutOfOxygen();
         }
     }
 
