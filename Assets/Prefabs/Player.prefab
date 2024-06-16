@@ -161,9 +161,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7a1f8dfb36302454790d6bacf3c41d1f, type: 3}
   - {fileID: 8300000, guid: 848185b9846f4f440b15ecb8d0658e15, type: 3}
   - {fileID: 8300000, guid: a6df40eddb953d146846d5f6718f895c, type: 3}
+  playOnHurt: []
+  hurtImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  suffocationImage: {fileID: 0}
   volume: 0.2
   maxHealth: 100
   currentHealth: 0
+  hurtFade: 1
+  suffocationFade: 10
 --- !u!114 &1994458972038951117
 MonoBehaviour:
   m_ObjectHideFlags: 0
