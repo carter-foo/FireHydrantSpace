@@ -87,6 +87,8 @@ public class JunpSpawner2 : MonoBehaviour
     }
 
     IEnumerator SpawnLoop() {
+        yield return new WaitUntil(() => player.gameObject.activeInHierarchy);
+        
         while (true) {
             yield return new WaitForSeconds(projectileInterval);
 

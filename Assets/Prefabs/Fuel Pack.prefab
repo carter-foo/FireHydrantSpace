@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpSound: {fileID: 8300000, guid: 925cbdd226b8d0c4baee2864d261a677, type: 3}
   volume: 0.2
-  refillAmount: 25
+  refillAmount: 100
 --- !u!136 &4978699922124565581
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a39f720964d5340b02c24bc18df1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  texture: {fileID: 2800000, guid: 3cf841dcb20d53b40bb07e587b074876, type: 3}
   rangeMult: 1
   hardLimit: 9999
   show: 1

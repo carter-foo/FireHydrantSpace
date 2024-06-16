@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class TargetIcon : MonoBehaviour
 {
+    public Texture texture;
     public float rangeMult = 1;
     public float hardLimit = 9999;
     public bool show = true;
 
 
     public void OnDisable() {
-        GameObject.FindObjectOfType<HUDMarkers>().RemoveTarget(this);
+        FindObjectOfType<HUDMarkers>()?.RemoveTarget(this);
     }
 }

@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 public class HUDMarkers : MonoBehaviour {
     public Vector2 lowresScreenSize = new Vector2(540, 360);
+    public Vector2 textureSize = new Vector2(8, 8);
     public float scannerRange = 200f;
-    public Texture marker;
 
     public List<TargetIcon> targets;
 
@@ -43,8 +43,8 @@ public class HUDMarkers : MonoBehaviour {
         var PADDING = 20;
 
         var screenSizeCoeff = CalculateScreenSizeCoeff();
-        var width = marker.width / screenSizeCoeff.x;
-        var height = marker.height / screenSizeCoeff.y;
+        var width = textureSize.x / screenSizeCoeff.x;
+        var height = textureSize.y / screenSizeCoeff.y;
         var phi = Mathf.Atan(Screen.height / Screen.width);
 
         foreach (var target in targets)
@@ -55,7 +55,7 @@ public class HUDMarkers : MonoBehaviour {
             var screenPos = Camera.main.WorldToScreenPoint(target.transform.position);
             if(viewPortPos.z > 0 && viewPortPos.x > 0 && viewPortPos.y > 0 && viewPortPos.x < 1f && viewPortPos.y < 1f ) {
                 screenPos = screenPos / screenSizeCoeff;
-                GUI.DrawTexture(new Rect(screenPos.x - width / 2f, Screen.height - screenPos.y - height / 2f, width, height), marker);
+                GUI.DrawTexture(new Rect(screenPos.x - width / 2f, Screen.height - screenPos.y - height / 2f, width, height), target.texture);
             }
             else {
                 var dir = (target.transform.position - Camera.main.transform.position).normalized;
@@ -68,7 +68,7 @@ public class HUDMarkers : MonoBehaviour {
                 pos.y = Mathf.Clamp(pos.y, PADDING, Screen.height - PADDING);
                 // normalizedDirPos = new Vector3(normalizedDirPos.x / Screen.width, normalizedDirPos.y / Screen.height);
                 // pos = RetroCameraEffect.SnapUICoords(pos) / RetroCameraEffect.Coefficient;
-                GUI.DrawTexture(new Rect(pos.x - width / 2f, Screen.height - pos.y - height / 2f, width, height), marker);
+                GUI.DrawTexture(new Rect(pos.x - width / 2f, Screen.height - pos.y - height / 2f, width, height), target.texture);
             }
         }
     }
