@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5480001441832155405}
   - component: {fileID: 7942163073609119347}
   - component: {fileID: 4978699922124565581}
+  - component: {fileID: -2211445097214323938}
   m_Layer: 0
   m_Name: Fuel Pack
   m_TagString: Untagged
@@ -68,10 +69,26 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.5
+  m_Radius: 1
+  m_Height: 2
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2211445097214323938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879513240414886402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a39f720964d5340b02c24bc18df1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  rangeMult: 1
+  hardLimit: 9999
+  show: 1
 --- !u!1 &4769834295920389278
 GameObject:
   m_ObjectHideFlags: 0
