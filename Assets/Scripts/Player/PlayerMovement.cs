@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -51,6 +52,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.R)) {
+            SceneManager.LoadScene("GameScene");
+            return;
+        }
+
         if (Input.GetMouseButton(0) || Input.GetMouseButton(1))
         {
             if (currentFuel > 0)
@@ -79,6 +85,12 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
+                if (foamParticleSystem != null)
+                {
+                    ParticleSystem.EmissionModule emission = foamParticleSystem.emission;
+                    emission.enabled = false;
+                }
+
                 // Play fart sound when there's no fuel
                 if (!audioSource.isPlaying || audioSource.clip != fartSound)
                 {

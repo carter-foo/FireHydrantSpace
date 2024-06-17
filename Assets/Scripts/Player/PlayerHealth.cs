@@ -120,8 +120,11 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Ship"))
         {
             Debug.Log("Should be Wining");
-            winManager.ShowWinScreen();
-        } else
+            winManager.Win();
+            hurtOpacity = 0.0f;
+            suffocationOpacity = 0.0f;
+        } 
+        else
         {
             Debug.Log("Offfff");
             TakeDamage(damageOnHit);

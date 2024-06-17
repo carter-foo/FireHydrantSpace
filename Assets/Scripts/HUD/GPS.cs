@@ -26,6 +26,6 @@ public class GPS : MonoBehaviour
         }
 
         var dist = Vector3.Distance(player.position, ship.position);
-        gpsText.text = "SIGNAL STRENGTH: " + (int) Mathf.Clamp(Mathf.Round((1.0f - dist / 500.0f) * 100.0f), 0.0f, 100.0f) + "%";
+        gpsText.text = "SIGNAL STRENGTH: " + (int) Mathf.Clamp(Mathf.Round((1.0f - dist / 1000.0f) * 100.0f), 0.0f, 100.0f) + "%";
     }
 }

@@ -817,7 +817,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DO FIRE EXTINGUISHERS WORK IN SPACE?
+  m_Text: DO FIRE EXTINGUISHERS WORK IN SPACE!?
 --- !u!222 &454740291
 CanvasRenderer:
   m_ObjectHideFlags: 0
